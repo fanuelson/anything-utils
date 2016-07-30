@@ -1,3 +1,4 @@
+package ffnunes.data;
 import java.util.Date;
 
 import org.joda.time.DateTime;
@@ -6,7 +7,7 @@ import org.junit.Test;
 
 import ffnunes.utils.DataUtils;
 
-public class DataUtilsColisaoPeriodoPeriodoTest {
+public class ColisaoPeriodoPeriodoTest {
 	
 	@Test
 	public void periodosNaoColidemExclusive(){
