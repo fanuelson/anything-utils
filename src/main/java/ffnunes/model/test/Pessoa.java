@@ -7,6 +7,10 @@ public class Pessoa {
 	private Long id ;
 	private String nome;
 	
+	public Pessoa(String nome) {
+		this.nome = nome;
+	}
+	
 	public Pessoa save(){
 		this.id = ID_CONT;
 		ID_CONT++;

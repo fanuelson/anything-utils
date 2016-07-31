@@ -13,6 +13,7 @@
 		<version.surefire.plugin>2.19.1</version.surefire.plugin>
 		<jodaTime.version>2.9.4</jodaTime.version>
 		<apache.commons.collection.version>4.0</apache.commons.collection.version>
+		<velocity.version>1.7</velocity.version>
 		<junit.version>4.12</junit.version>
 	</properties>
 
@@ -56,6 +57,13 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-collections4</artifactId>
 		    <version>${apache.commons.collection.version}</version>
+		</dependency>
+		
+		<!-- VELOCITY TEMPLATE -->
+		<dependency>
+		    <groupId>org.apache.velocity</groupId>
+		    <artifactId>velocity</artifactId>
+		    <version>${velocity.version}</version>
 		</dependency>
 
 		<!-- JUNIT -->
