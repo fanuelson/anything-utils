@@ -13,6 +13,9 @@
 		<version.surefire.plugin>2.19.1</version.surefire.plugin>
 		<jodaTime.version>2.9.4</jodaTime.version>
 		<apache.commons.collection.version>4.0</apache.commons.collection.version>
+		<jasypt.version>1.9.2</jasypt.version>
+		<commons.io.version>2.4</commons.io.version>
+		<commons.lang3.version>3.4</commons.lang3.version>
 		<junit.version>4.12</junit.version>
 	</properties>
 
@@ -62,8 +65,23 @@
 		<dependency>
 			<groupId>org.jasypt</groupId>
 			<artifactId>jasypt</artifactId>
-			<version>1.9.2</version>
+			<version>${jasypt.version}</version>
 		</dependency>
+		
+		<!-- COMMONS IO -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commons.io.version}</version>
+		</dependency>
+		
+		<!-- COMMONS-LANG3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>${commons.lang3.version}</version>
+		</dependency>
+		
 
 		<!-- JUNIT -->
 		<dependency>
