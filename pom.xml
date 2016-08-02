@@ -57,6 +57,13 @@
 		    <artifactId>commons-collections4</artifactId>
 		    <version>${apache.commons.collection.version}</version>
 		</dependency>
+		
+		<!-- ENCRIPTER FOR PASSWORD -->
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.9.2</version>
+		</dependency>
 
 		<!-- JUNIT -->
 		<dependency>
