@@ -51,9 +51,55 @@ public final class ValidadorUtils {
 			return (false);
 		}
 	}
+	
+	public static boolean isCNPJ(String cnpj) {
+		try {
+			Long.parseLong(cnpj);
+		} catch (NumberFormatException e) {
+			return false;
+		}
 
-	public static String imprimeCPF(String CPF) {
-		return (CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." + CPF.substring(6, 9) + "-"
-				+ CPF.substring(9, 11));
+		if (cnpj.length() < 14) {
+		    cnpj = String.format("%014d", Long.parseLong(cnpj));
+		}
+
+		int soma = 0;
+		String cnpjCalc = cnpj.substring(0, 12);
+
+		char[] chrCnpj = cnpj.toCharArray();
+		for (int i = 0; i < 4; i++){
+			if (chrCnpj[i] - 48 >= 0 && chrCnpj[i] - 48 <= 9){
+				soma += (chrCnpj[i] - 48) * (6 - (i + 1));
+			}
+		}
+		
+		for (int i = 0; i < 8; i++){
+			if (chrCnpj[i + 4] - 48 >= 0 && chrCnpj[i + 4] - 48 <= 9){
+				soma += (chrCnpj[i + 4] - 48) * (10 - (i + 1));
+			}
+		}
+		
+		int dig = 11 - soma % 11;
+		cnpjCalc = (new StringBuilder(String.valueOf(cnpjCalc)))
+				.append(dig != 10 && dig != 11 ? Integer.toString(dig) : "0").toString();
+		soma = 0;
+		for (int i = 0; i < 5; i++){
+			if (chrCnpj[i] - 48 >= 0 && chrCnpj[i] - 48 <= 9){
+				soma += (chrCnpj[i] - 48) * (7 - (i + 1));
+			}
+		}
+		
+		for (int i = 0; i < 8; i++){
+			if (chrCnpj[i + 5] - 48 >= 0 && chrCnpj[i + 5] - 48 <= 9){
+				soma += (chrCnpj[i + 5] - 48) * (10 - (i + 1));
+			}
+		}
+		
+		dig = 11 - soma % 11;
+		cnpjCalc = (new StringBuilder(String.valueOf(cnpjCalc)))
+				.append(dig != 10 && dig != 11 ? Integer.toString(dig) : "0").toString();
+
+		return cnpj.equals(cnpjCalc);
 	}
+
 }
