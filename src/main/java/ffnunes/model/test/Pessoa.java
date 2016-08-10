@@ -1,6 +1,6 @@
 package ffnunes.model.test;
 
-import ffnunes.anotacao.Testando;
+import ffnunes.anotacao.Atributo;
 
 public class Pessoa {
 
@@ -8,7 +8,7 @@ public class Pessoa {
 	
 	private Long id ;
 	
-	@Testando
+	@Atributo
 	private String nome;
 	
 	public Pessoa(String nome) {
