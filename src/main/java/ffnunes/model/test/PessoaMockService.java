@@ -7,7 +7,6 @@ public class PessoaMockService {
 
 	public static List<Pessoa> getAll() {
 		Pessoa p1 = new Pessoa("Fanuel");
-		salvar(p1);
 		Pessoa p2 = new Pessoa("José");
 		Pessoa p3 = new Pessoa("Maria");
 		
@@ -22,5 +21,11 @@ public class PessoaMockService {
 	
 	public static Pessoa salvar(Pessoa p){
 		return p.save();
+	}
+	
+	public static void salvar(List<Pessoa> pessoas){
+		for (Pessoa pessoa : pessoas) {
+			pessoa.save();
+		}
 	}
 }
