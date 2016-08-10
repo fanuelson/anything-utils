@@ -1,10 +1,14 @@
 package ffnunes.model.test;
 
+import ffnunes.anotacao.Testando;
+
 public class Pessoa {
 
 	private static Long ID_CONT = 1L;
 	
 	private Long id ;
+	
+	@Testando
 	private String nome;
 	
 	public Pessoa(String nome) {

@@ -2,10 +2,12 @@ package ffnunes.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class FormatadorUtils {
+public final class FormatadorUtils {
 	
 	private static final String HIFEN = "-";
 	private static final int _4DIGITOS = 4;
+	
+	private FormatadorUtils() {}
 	
 	public static String formatarCelular(String str) {
 		String telefoneFormatado = str;

@@ -3,6 +3,8 @@ package ffnunes.utils;
 import java.util.InputMismatchException;
 
 public final class ValidadorUtils {
+	
+	private ValidadorUtils(){}
 
 	public static boolean isCPF(String CPF) {
 		if (CPF.equals("00000000000") || CPF.equals("11111111111") || CPF.equals("22222222222")
