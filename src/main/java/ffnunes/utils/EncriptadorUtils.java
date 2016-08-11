@@ -7,7 +7,8 @@ public final class EncriptadorUtils {
 	private static final String MD5 = "MD5";
 	private static final String SHA_1 = "SHA-1";
 
-	private EncriptadorUtils() {}
+	private EncriptadorUtils() {
+	}
 
 	public static String encriptarMD5(String senha) {
 		ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
@@ -22,7 +23,7 @@ public final class EncriptadorUtils {
 		passwordEncryptor.setPlainDigest(true);
 		return passwordEncryptor.checkPassword(plainPass, encryptPass);
 	}
-	
+
 	public static String encriptarSHA_1(String senha) {
 		ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
 		passwordEncryptor.setAlgorithm(SHA_1);

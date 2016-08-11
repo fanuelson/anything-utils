@@ -3,8 +3,9 @@ package ffnunes.utils;
 import java.util.InputMismatchException;
 
 public final class ValidadorUtils {
-	
-	private ValidadorUtils(){}
+
+	private ValidadorUtils() {
+	}
 
 	public static boolean isCPF(String CPF) {
 		if (CPF.equals("00000000000") || CPF.equals("11111111111") || CPF.equals("22222222222")
@@ -53,7 +54,7 @@ public final class ValidadorUtils {
 			return (false);
 		}
 	}
-	
+
 	public static boolean isCNPJ(String cnpj) {
 		try {
 			Long.parseLong(cnpj);
@@ -62,41 +63,41 @@ public final class ValidadorUtils {
 		}
 
 		if (cnpj.length() < 14) {
-		    cnpj = String.format("%014d", Long.parseLong(cnpj));
+			cnpj = String.format("%014d", Long.parseLong(cnpj));
 		}
 
 		int soma = 0;
 		String cnpjCalc = cnpj.substring(0, 12);
 
 		char[] chrCnpj = cnpj.toCharArray();
-		for (int i = 0; i < 4; i++){
-			if (chrCnpj[i] - 48 >= 0 && chrCnpj[i] - 48 <= 9){
+		for (int i = 0; i < 4; i++) {
+			if (chrCnpj[i] - 48 >= 0 && chrCnpj[i] - 48 <= 9) {
 				soma += (chrCnpj[i] - 48) * (6 - (i + 1));
 			}
 		}
-		
-		for (int i = 0; i < 8; i++){
-			if (chrCnpj[i + 4] - 48 >= 0 && chrCnpj[i + 4] - 48 <= 9){
+
+		for (int i = 0; i < 8; i++) {
+			if (chrCnpj[i + 4] - 48 >= 0 && chrCnpj[i + 4] - 48 <= 9) {
 				soma += (chrCnpj[i + 4] - 48) * (10 - (i + 1));
 			}
 		}
-		
+
 		int dig = 11 - soma % 11;
 		cnpjCalc = (new StringBuilder(String.valueOf(cnpjCalc)))
 				.append(dig != 10 && dig != 11 ? Integer.toString(dig) : "0").toString();
 		soma = 0;
-		for (int i = 0; i < 5; i++){
-			if (chrCnpj[i] - 48 >= 0 && chrCnpj[i] - 48 <= 9){
+		for (int i = 0; i < 5; i++) {
+			if (chrCnpj[i] - 48 >= 0 && chrCnpj[i] - 48 <= 9) {
 				soma += (chrCnpj[i] - 48) * (7 - (i + 1));
 			}
 		}
-		
-		for (int i = 0; i < 8; i++){
-			if (chrCnpj[i + 5] - 48 >= 0 && chrCnpj[i + 5] - 48 <= 9){
+
+		for (int i = 0; i < 8; i++) {
+			if (chrCnpj[i + 5] - 48 >= 0 && chrCnpj[i + 5] - 48 <= 9) {
 				soma += (chrCnpj[i + 5] - 48) * (10 - (i + 1));
 			}
 		}
-		
+
 		dig = 11 - soma % 11;
 		cnpjCalc = (new StringBuilder(String.valueOf(cnpjCalc)))
 				.append(dig != 10 && dig != 11 ? Integer.toString(dig) : "0").toString();

@@ -16,23 +16,23 @@ public final class ReflectionUtils {
 	public static void atribuirValorAoCampo(Object valor, Object target, String nomeDoCampo) {
 		try {
 			FieldUtils.writeField(target, nomeDoCampo, valor, true);
-		} catch (IllegalArgumentException|IllegalAccessException e) {
+		} catch (IllegalArgumentException | IllegalAccessException e) {
 			throw new FieldNotFoundException("Field \""+nomeDoCampo+"\" not found on class "+target.getClass().getName());
 		}
 	}
 	
-	public static List<Field> recuperarCamposAnotadosCom(Class<?> clazz, Class<? extends Annotation> anotation){
+	public static List<Field> recuperarCamposAnotadosCom(Class<?> clazz, Class<? extends Annotation> anotation) {
 		return FieldUtils.getFieldsListWithAnnotation(clazz, anotation);
 	}
-	
-	public static Field[] recuperarTodosCampos(Class<?> clazz){
+
+	public static Field[] recuperarTodosCampos(Class<?> clazz) {
 		return FieldUtils.getAllFields(clazz);
 	}
 
 	public static Object recuperarValorCampo(Object objeto, String nomeDoCampo) {
 		try {
 			return FieldUtils.readField(objeto, nomeDoCampo, true);
-		} catch (IllegalArgumentException|IllegalAccessException e) {
+		} catch (IllegalArgumentException | IllegalAccessException e) {
 			throw new FieldNotFoundException("Field \""+nomeDoCampo+"\" not found on class "+objeto.getClass().getName());
 		} 
 	}
