@@ -38,4 +38,14 @@ public final class FormatadorUtils {
 		return (CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." + CPF.substring(6, 9) + "-"
 				+ CPF.substring(9, 11));
 	}
+
+	public static String formatarCNPJ(String cnpj) {
+		return (cnpj.substring(0, 2) + "." + cnpj.substring(2, 5) + "." + cnpj.substring(5, 8) + "/"
+				+ cnpj.substring(8, 12) + "-" + cnpj.substring(12, 14));
+	}
+
+	public static String formatarCEP(String cep) {
+		return (cep.substring(0, 5) + "-" + cep.substring(5, 8));
+	}
+
 }
