@@ -13,7 +13,6 @@
 		<version.surefire.plugin>2.19.1</version.surefire.plugin>
 		<jodaTime.version>2.9.4</jodaTime.version>
 		<apache.commons.collection.version>4.0</apache.commons.collection.version>
-		<velocity.version>1.7</velocity.version>
 		<jasypt.version>1.9.2</jasypt.version>
 		<commons.io.version>2.4</commons.io.version>
 		<commons.lang3.version>3.4</commons.lang3.version>
@@ -60,13 +59,6 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-collections4</artifactId>
 		    <version>${apache.commons.collection.version}</version>
-		</dependency>
-		
-		<!-- VELOCITY TEMPLATE -->
-		<dependency>
-		    <groupId>org.apache.velocity</groupId>
-		    <artifactId>velocity</artifactId>
-		    <version>${velocity.version}</version>
 		</dependency>
 		
 		<!-- ENCRIPTER FOR PASSWORD -->
