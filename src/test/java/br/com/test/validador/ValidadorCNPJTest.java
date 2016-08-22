@@ -28,4 +28,23 @@ public class ValidadorCNPJTest {
 		//Arrange
 		Assert.assertFalse(resultado);
 	}
+	
+	@Test(expected=NullPointerException.class)
+	public void cpfInvalidoNull(){
+		String cpfInvalido = null;
+		
+		//Act
+		ValidadorUtils.isCPF(cpfInvalido);
+	}
+	
+	@Test
+	public void cpfInvalidoBranco(){
+		String cpfInvalido = "";
+		
+		//Act
+		boolean resultado = ValidadorUtils.isCPF(cpfInvalido);
+		
+		//Arrange
+		Assert.assertFalse(resultado);
+	}
 }
