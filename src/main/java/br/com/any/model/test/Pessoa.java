@@ -11,6 +11,12 @@ public class Pessoa {
 	@Atributo
 	private String nome;
 	
+	private Bola bola = new Bola();
+	
+	public Pessoa(){
+		
+	}
+	
 	public Pessoa(String nome) {
 		this.nome = nome;
 	}
@@ -37,6 +43,14 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
+	public Bola getBola() {
+		return bola;
+	}
+
+	public void setBola(Bola bola) {
+		this.bola = bola;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -64,7 +78,7 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + "]";
+		return "Pessoa [id=" + id + ", nome=" + nome + ", bola=" + bola + "]";
 	}
-	
+
 }

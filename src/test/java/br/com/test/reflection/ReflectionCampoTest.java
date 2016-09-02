@@ -44,8 +44,8 @@ public class ReflectionCampoTest {
 		Field[] camposPessoaFisica = ReflectionUtils.recuperarTodosCampos(PessoaFisica.class);
 
 		//Arrange
-		Assert.assertTrue(camposPessoa.length==3);
-		Assert.assertTrue(camposPessoaFisica.length==4);
+		Assert.assertTrue(camposPessoa.length==4);
+		Assert.assertTrue(camposPessoaFisica.length==5);
 	}
 	
 	@Test

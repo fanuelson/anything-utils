@@ -37,7 +37,7 @@ public final class ReflectionUtils {
 		} 
 	}
 	
-	public static void resetarCamposToNull(Object obj, String... campos) {
+	public static void resetFieldsToNull(Object obj, String... campos) {
 		for (String nomeCampo : campos) {
 			try {
 				Object f = FieldUtils.readField(obj, nomeCampo, true);
@@ -50,7 +50,7 @@ public final class ReflectionUtils {
 		}
 	}
 
-	public static void resetarCamposToNewInstance(Object obj, String... campos) {
+	public static void resetFieldsToNewInstance(Object obj, String... campos) {
 		for (String nomeCampo : campos) {
 			try {
 				Object f = FieldUtils.readField(obj, nomeCampo, true);
