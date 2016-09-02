@@ -37,4 +37,41 @@ public final class ReflectionUtils {
 		} 
 	}
 	
+	public static void resetarCamposToNull(Object obj, String... campos) {
+		for (String nomeCampo : campos) {
+			try {
+				Object f = FieldUtils.readField(obj, nomeCampo, true);
+				if (f != null) {
+					atribuirValorAoCampo(null, obj, nomeCampo);
+				}
+			} catch (IllegalAccessException e) {
+				throw new RuntimeException("REFLECTION ERROR READING FIELD: " + nomeCampo, e);
+			}
+		}
+	}
+
+	public static void resetarCamposToNewInstance(Object obj, String... campos) {
+		for (String nomeCampo : campos) {
+			try {
+				Object f = FieldUtils.readField(obj, nomeCampo, true);
+				if (f != null) {
+					Object newInstance = getNewInstanceOfClass(f.getClass());
+					atribuirValorAoCampo(newInstance, obj, nomeCampo);
+				}
+			} catch (IllegalAccessException e) {
+				throw new RuntimeException("REFLECTION ERROR FIELD: " + nomeCampo, e);
+			}
+		}
+	}
+	
+	private static <T> T getNewInstanceOfClass(Class<T> clazz) {
+		try {
+			return clazz.newInstance();
+		} catch (InstantiationException e) {
+			throw new RuntimeException("REFLECTION ERROR", e);
+		} catch (IllegalAccessException e) {
+			throw new RuntimeException("REFLECTION ERROR", e);
+		}
+	}
+	
 }
