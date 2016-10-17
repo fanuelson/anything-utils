@@ -8,41 +8,33 @@ import br.com.any.utils.ValidadorUtils;
 public class ValidadorCNPJTest {
 
 	@Test
-	public void cpfValido(){
-		String cpfValido = "09152740358";
+	public void cnpjValido(){
+		String cnpjValido = "60562166000123";
 		
 		//Act
-		boolean resultado = ValidadorUtils.isCPF(cpfValido);
+		boolean resultado = ValidadorUtils.isCNPJ(cnpjValido);
 		
 		//Arrange
 		Assert.assertTrue(resultado);
 	}
 	
 	@Test
-	public void cpfInvalido(){
-		String cpfInvalido = "93253457506";
+	public void cnpjInvalido(){
+		String cpfInvalido = "60562266000654";
 		
 		//Act
-		boolean resultado = ValidadorUtils.isCPF(cpfInvalido);
+		boolean resultado = ValidadorUtils.isCNPJ(cpfInvalido);
 		
 		//Arrange
 		Assert.assertFalse(resultado);
 	}
 	
-	@Test(expected=NullPointerException.class)
-	public void cpfInvalidoNull(){
-		String cpfInvalido = null;
-		
-		//Act
-		ValidadorUtils.isCPF(cpfInvalido);
-	}
-	
 	@Test
-	public void cpfInvalidoBranco(){
-		String cpfInvalido = "";
+	public void cnpjInvalido2(){
+		String cpfInvalido = "60562266";
 		
 		//Act
-		boolean resultado = ValidadorUtils.isCPF(cpfInvalido);
+		boolean resultado = ValidadorUtils.isCNPJ(cpfInvalido);
 		
 		//Arrange
 		Assert.assertFalse(resultado);
