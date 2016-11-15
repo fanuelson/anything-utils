@@ -11,7 +11,7 @@ public class Pessoa {
 	@Atributo
 	private String nome;
 	
-	private Bola bola = new Bola();
+	private BolaForTest bola = new BolaForTest();
 	
 	public Pessoa(){
 		
@@ -43,11 +43,11 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
-	public Bola getBola() {
+	public BolaForTest getBola() {
 		return bola;
 	}
 
-	public void setBola(Bola bola) {
+	public void setBola(BolaForTest bola) {
 		this.bola = bola;
 	}
 

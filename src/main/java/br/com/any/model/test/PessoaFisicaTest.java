@@ -1,10 +1,10 @@
 package br.com.any.model.test;
 
-public class PessoaFisica extends Pessoa {
+public class PessoaFisicaTest extends Pessoa {
 	
 	private String cpf;
 
-	public PessoaFisica(String nome){
+	public PessoaFisicaTest(String nome){
 		super(nome);
 	}
 

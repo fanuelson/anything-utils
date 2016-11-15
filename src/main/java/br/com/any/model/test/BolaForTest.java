@@ -1,6 +1,6 @@
 package br.com.any.model.test;
 
-public class Bola {
+public class BolaForTest {
 
 	private String nomeBola ;
 

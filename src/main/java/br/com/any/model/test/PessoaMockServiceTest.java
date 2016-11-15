@@ -3,7 +3,7 @@ package br.com.any.model.test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PessoaMockService {
+public class PessoaMockServiceTest {
 
 	public static List<Pessoa> getAll() {
 		Pessoa p1 = new Pessoa("Fanuel");

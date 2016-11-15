@@ -9,7 +9,7 @@ import org.junit.Test;
 import br.com.any.anotacao.Atributo;
 import br.com.any.exception.FieldNotFoundException;
 import br.com.any.model.test.Pessoa;
-import br.com.any.model.test.PessoaFisica;
+import br.com.any.model.test.PessoaFisicaTest;
 import br.com.any.utils.ReflectionUtils;
 
 public class ReflectionCampoTest {
@@ -17,7 +17,7 @@ public class ReflectionCampoTest {
 	@Test
 	public void recuperarValorCampoExistente(){
 		Pessoa pessoa = new Pessoa("NomeQualquer");
-		PessoaFisica pessoaFisica = new PessoaFisica("NomePessoaFisica");
+		PessoaFisicaTest pessoaFisica = new PessoaFisicaTest("NomePessoaFisica");
 		
 		//Act
 		String resultadoPessoa = (String) ReflectionUtils.recuperarValorCampo(pessoa, "nome");
@@ -41,7 +41,7 @@ public class ReflectionCampoTest {
 	public void recuperarTodosCampos(){
 		//Act
 		Field[] camposPessoa = ReflectionUtils.recuperarTodosCampos(Pessoa.class);
-		Field[] camposPessoaFisica = ReflectionUtils.recuperarTodosCampos(PessoaFisica.class);
+		Field[] camposPessoaFisica = ReflectionUtils.recuperarTodosCampos(PessoaFisicaTest.class);
 
 		//Arrange
 		Assert.assertTrue(camposPessoa.length==4);
@@ -52,7 +52,7 @@ public class ReflectionCampoTest {
 	public void recuperarTodosCamposAnotadosCom(){
 		//Act
 		List<Field> camposAnotadosPessoa = ReflectionUtils.recuperarCamposAnotadosCom(Pessoa.class, Atributo.class);
-		List<Field> camposAnotadosPessoaFisica = ReflectionUtils.recuperarCamposAnotadosCom(PessoaFisica.class, Atributo.class);
+		List<Field> camposAnotadosPessoaFisica = ReflectionUtils.recuperarCamposAnotadosCom(PessoaFisicaTest.class, Atributo.class);
 
 		//Arrange
 		Assert.assertTrue(camposAnotadosPessoa.size()==1);
@@ -62,7 +62,7 @@ public class ReflectionCampoTest {
 	@Test
 	public void atribuirValorCampoExistente(){
 		Pessoa p = new Pessoa("NomePessoa");
-		PessoaFisica pessoaFisica = new PessoaFisica("NomePessoaFisica");
+		PessoaFisicaTest pessoaFisica = new PessoaFisicaTest("NomePessoaFisica");
 		
 		//Act
 		ReflectionUtils.atribuirValorAoCampo("NomePessoaAlterado", p, "nome");
