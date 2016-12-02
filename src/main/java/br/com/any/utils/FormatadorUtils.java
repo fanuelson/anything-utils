@@ -1,11 +1,17 @@
 package br.com.any.utils;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 import org.apache.commons.lang3.StringUtils;
 
 public final class FormatadorUtils {
 
 	private static final String HIFEN = "-";
 	private static final int _4DIGITOS = 4;
+	
+	static final char VIRGULA = ',';
+	static final char PONTO = '.';
 
 	private FormatadorUtils() {
 	}
@@ -46,6 +52,18 @@ public final class FormatadorUtils {
 
 	public static String formatarCEP(String cep) {
 		return (cep.substring(0, 5) + "-" + cep.substring(5, 8));
+	}
+	
+	public static String formatNumberBr(Number n, int qtdCasasDecimais) {
+		DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance();
+		dfs.setDecimalSeparator(VIRGULA);
+		dfs.setGroupingSeparator(PONTO);
+		String pattern = "##,#00";
+		if(qtdCasasDecimais > 0){
+			pattern = pattern.concat(PONTO + StringUtils.repeat('0', qtdCasasDecimais));
+		}
+		DecimalFormat fd = new DecimalFormat(pattern, dfs);
+		return fd.format(n);
 	}
 
 }
